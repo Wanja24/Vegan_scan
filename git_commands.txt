@@ -1,0 +1,25 @@
+Main commands:
+
+git init - initialise git repo inside a directory
+git status - view the staging area
+git add <file> - add/re-add file to the staging area
+git add . - add all files to the staging area
+git rm --cached <file> - remove file from the staging area
+git commit -m "<message>" - commit staged changes to git repo with a message
+git commit -am "<message>" - add all files to staging area then commit
+
+Branch commands:
+
+git checkout -b <branch name> - create a new branch
+git checkout <branch name> - switch to a branch
+git branch - view all branches
+git merge <branch name> - overlay work from branch name onto the current branch
+git branch -M <branch name> - rename current branch to branch name
+
+Remote Repo commands:
+
+git remote add origin <url> - add the url to the repo as a remote with name origin
+git remote - view remote branches
+git push -u origin <branch> - upload changes in a branch to origin (the remote repo)
+git pull - get changes in remote repo
+git clone <url> - clone remote repo and save it to a new directory
