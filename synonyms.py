@@ -8,3 +8,5 @@ def fill_synonyms():
 
 fill_synonyms()
 print(liste_synonyms)
+
+#warnmeldung oder darauf zugreifen, wenn key existiert und dann dessen value uum den neuen value erweitern...
