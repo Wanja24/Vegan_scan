@@ -14,7 +14,7 @@ from sklearn.model_selection import train_test_split
 
 
 # todo: change directory
-df = pd.read_csv("food_matrix.csv", nrows=1000)
+df = pd.read_csv("food_matrix.csv")
 df.head()
 
 
