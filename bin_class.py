@@ -140,10 +140,12 @@ if __name__ == "__main__" :
         print(f'Epoch {e + 0:03}: | Loss: {epoch_loss / len(train_loader):.5f} | Acc: {epoch_acc / len(train_loader):.3f}')
 
     # todo: save model
+    # torch.save(model, 'saved_models/iris_model_1.pt')
+    # torch.save(model.state_dict(), 'saved_models/iris_model_1.pt')
 
     # todo: put this in a new file when you saved the model
     # todo: load model
-
+"""
     y_pred_list = []
     model.eval()
     with torch.no_grad():
@@ -156,3 +158,4 @@ if __name__ == "__main__" :
 
     y_pred_list = [a.squeeze().tolist() for a in y_pred_list]
     confusion_matrix(y_test, y_pred_list)
+"""
