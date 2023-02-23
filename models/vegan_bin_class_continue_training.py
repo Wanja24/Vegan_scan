@@ -14,7 +14,7 @@ from sklearn.model_selection import train_test_split
 
 
 # todo: change directory
-df = pd.read_csv("food_matrix.csv")
+df = pd.read_csv("../food_matrix.csv")
 df.head()
 
 
@@ -111,7 +111,7 @@ if __name__ == "__main__" :
     print(model)
     criterion = nn.BCEWithLogitsLoss()
     optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE)
-    checkpoint = torch.load('saved_models/vegan_model_2.1.tar')  # todo: change directory/file name
+    checkpoint = torch.load('../saved_models/vegan_model_2.1.tar')  # todo: change directory/file name
     model.load_state_dict(checkpoint['model_state_dict'])
     optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
     epoch = checkpoint['epoch']
@@ -149,7 +149,7 @@ if __name__ == "__main__" :
             'optimizer_state_dict': optimizer.state_dict(),
             'epoch_loss': epoch_loss,
             'epoch_acc': epoch_acc
-        }, f'saved_models/vegan_model_cont_1.{e}.tar')  # todo: change directory/file name
+        }, f'../saved_models/vegan_model_cont_1.{e}.tar')  # todo: change directory/file name
 
     # plot loss
     plt.plot(losses)

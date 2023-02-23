@@ -1,4 +1,4 @@
-from bin_class import *
+from iris_examples.bin_class import *
 
 # todo: put this in a new file when you saved the model
 # todo: load model
@@ -6,7 +6,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print(device)
 num_features = len(X_train.columns)
 model = BinaryClassification(num_features)
-model.load_state_dict(torch.load("saved_models/iris_model_1.pt"))
+model.load_state_dict(torch.load("../saved_models/iris_model_1.pt"))
 
 y_pred_list = []
 model.eval()

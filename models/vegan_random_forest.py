@@ -7,7 +7,7 @@ import pickle
 
 #Load dataset
 # todo: change directory
-df = pd.read_csv("food_matrix.csv")
+df = pd.read_csv("../food_matrix.csv")
 df.head()
 
 
@@ -37,8 +37,8 @@ print("Confusion matrix:")
 print(confusion)
 
 # save model
-pickle.dump(clf, open("saved_models/vegan_rf.pkl", "wb"))  # todo: change directory/file name
+pickle.dump(clf, open("../saved_models/vegan_rf.pkl", "wb"))  # todo: change directory/file name
 
 # load model
-#loaded_model = pickle.load(open("saved_models/iris_rf.pkl", "rb"))
+#loaded_model = pickle.load(open("../saved_models/iris_rf.pkl", "rb"))
 

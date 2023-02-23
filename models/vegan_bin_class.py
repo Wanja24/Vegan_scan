@@ -14,7 +14,7 @@ from sklearn.model_selection import train_test_split
 
 
 # todo: change directory
-df = pd.read_csv("food_matrix.csv")
+df = pd.read_csv("../food_matrix.csv")
 df.head()
 
 
@@ -172,4 +172,7 @@ if __name__ == "__main__" :
 
     y_pred_list = [a.squeeze().tolist() for a in y_pred_list]
     confusion_matrix(y_test, y_pred_list)
+    
+    data_preprocessing/Data_cleaning.py iris_examples/bin_class.py iris_examples/bin_class_eval.py iris_examples/iris_random_forest.py iris_examples/model.py models/vegan_bin_class.py models/vegan_bin_class_continue_training.py models/vegan_bin_class_eval.py models/vegan_random_forest.py
+
 """

@@ -10,7 +10,7 @@ print(device)
 num_features = len(X_train.columns)
 model = BinaryClassification(num_features)
 optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE)
-checkpoint = torch.load('saved_models/vegan_model_3.1.tar')  # todo: change directory/file name
+checkpoint = torch.load('../saved_models/vegan_model_3.1.tar')  # todo: change directory/file name
 model.load_state_dict(checkpoint['model_state_dict'])
 optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
 epoch = checkpoint['epoch']

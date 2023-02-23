@@ -29,7 +29,7 @@ def load_classification_data(df, target_col, test_size):
 
 
 # reading data
-data2 = pd.read_csv('data/iris.csv')
+data2 = pd.read_csv('../data/iris.csv')
 # encoding labels
 data2['variety'] = data2['variety'].astype('category').cat.codes
 

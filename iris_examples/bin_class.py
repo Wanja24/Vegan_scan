@@ -12,7 +12,7 @@ from torch.utils.data import Dataset, DataLoader
 from sklearn.model_selection import train_test_split
 
 
-df = pd.read_csv("data/iris.csv")
+df = pd.read_csv("../data/iris.csv")
 df.head()
 
 # just for iris data: fake it to binary

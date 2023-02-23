@@ -4,7 +4,7 @@ import re
 from langdetect import detect
 
 # load food_data
-food_data = pd.read_csv("D:/PyCharm/Techlabs_project/food_data.csv", encoding="utf_8")
+food_data = pd.read_csv("../data/food_data.csv", encoding="utf_8")
 # test code with part of the data
 # food_data = food_data[0:5000]
 

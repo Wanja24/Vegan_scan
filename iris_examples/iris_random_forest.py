@@ -7,7 +7,7 @@ import pandas as pd
 import pickle
 
 #Load dataset
-df = pd.read_csv("data/iris.csv")
+df = pd.read_csv("../data/iris.csv")
 df.head()
 
 # just for iris data: fake it to binary
@@ -47,8 +47,8 @@ print("Confusion matrix:")
 print(confusion)
 
 # save model
-pickle.dump(clf, open("saved_models/iris_rf.pkl", "wb"))
+pickle.dump(clf, open("../saved_models/iris_rf.pkl", "wb"))
 
 # load model
-#loaded_model = pickle.load(open("saved_models/iris_rf.pkl", "rb"))
+#loaded_model = pickle.load(open("../saved_models/iris_rf.pkl", "rb"))
 
