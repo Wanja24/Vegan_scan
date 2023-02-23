@@ -1,3 +1,4 @@
+# import libraries
 import pandas as pd
 import matplotlib.pyplot as plt
 import warnings
@@ -12,25 +13,27 @@ from torch.utils.data import Dataset, DataLoader
 
 from sklearn.model_selection import train_test_split
 
-
+# read data
 # todo: change directory
 df = pd.read_csv("../food_matrix.csv")
 df.head()
 
 
-
+# features
 X = df.iloc[:, 0:-1]
+# labels
 y = df.iloc[:, -1]
+# split data into training and test data
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=69)
 
-
+# hyperparameters
 # todo: adapt hyperparameters
 EPOCHS = 3
 BATCH_SIZE = 64
 LEARNING_RATE = 0.1
 
 
-## train data
+# train data
 class TrainData(Dataset):
 
     def __init__(self, X_data, y_data):
@@ -48,7 +51,7 @@ train_data = TrainData(torch.tensor(X_train.values).to(torch.float32),
                        torch.tensor(y_train.values).to(torch.float32))
 
 
-## test data
+# test data
 class TestData(Dataset):
 
     def __init__(self, X_data):
@@ -63,10 +66,11 @@ class TestData(Dataset):
 
 test_data = TestData(torch.tensor(X_test.values).to(torch.float32))
 
+# create DataLoaders
 train_loader = DataLoader(dataset=train_data, batch_size=BATCH_SIZE, shuffle=True)
 test_loader = DataLoader(dataset=test_data, batch_size=1)
 
-
+# Binary Classification network architecture
 class BinaryClassification(nn.Module):
     def __init__(self, inputs_size):
         super(BinaryClassification, self).__init__()
@@ -89,7 +93,7 @@ class BinaryClassification(nn.Module):
 
         return x
 
-
+# accuracy calculation
 def binary_acc(y_pred, y_test):
     y_pred_tag = torch.round(torch.sigmoid(y_pred))
 
@@ -102,15 +106,19 @@ def binary_acc(y_pred, y_test):
 
 if __name__ == "__main__" :
 
+    # select device
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     print(device)
 
+    # select model, loss function and optimizer
     num_features = len(X_train.columns)
     model = BinaryClassification(num_features)
     model.to(device)
     print(model)
     criterion = nn.BCEWithLogitsLoss()
     optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE)
+
+    # load a previously trained model to continue training
     checkpoint = torch.load('../saved_models/vegan_model_2.1.tar')  # todo: change directory/file name
     model.load_state_dict(checkpoint['model_state_dict'])
     optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
@@ -118,6 +126,8 @@ if __name__ == "__main__" :
 
     losses = []
 
+    # train model for several epochs on training data
+    # thereby track the batch loss, calculate epoch loss and epoch accuracy
     model.train()
     for e in range(epoch+1, epoch+EPOCHS+1):
         epoch_loss = 0
@@ -142,7 +152,7 @@ if __name__ == "__main__" :
 
         print(f'Epoch {e + 0:03}: | Loss: {epoch_loss / len(train_loader):.5f} | Acc: {epoch_acc / len(train_loader):.3f}')
 
-        # save checkpoints
+        # save checkpoint of the model after each epoch
         torch.save({
             'epoch': e,
             'model_state_dict': model.state_dict(),
@@ -151,7 +161,7 @@ if __name__ == "__main__" :
             'epoch_acc': epoch_acc
         }, f'../saved_models/vegan_model_cont_1.{e}.tar')  # todo: change directory/file name
 
-    # plot loss
+    # plot the loss
     plt.plot(losses)
     plt.title('loss vs batches')
     plt.xlabel('batches')
