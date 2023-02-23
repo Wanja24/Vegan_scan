@@ -1,3 +1,4 @@
+# source for code: https://towardsdatascience.com/pytorch-tabular-binary-classification-a0368da5bb89
 from iris_examples.bin_class import *
 
 # todo: put this in a new file when you saved the model
