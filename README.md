@@ -7,8 +7,8 @@ What, why, challenges, features to implement in future
 ## Installation  
 
 ## Credits  
-Contributors: Stefan Smid (StefanFSmid), Wanja Tolksdorf (Wanja24)  
-Mentor: Jennifer Matthiesen (jjmatthiesen)     
+Contributors: Stefan Smid (@StefanFSmid), Wanja Tolksdorf (@Wanja24)  
+Mentor: Jennifer Matthiesen (@jjmatthiesen)     
 This project was done as part of the Deep Learning track at TechLabs Hamburg (https://techlabs.org/location/hamburg).    
 Data source: https://openfoodfacts.org (licensed under the Open Database License)  
 Examples used as templates:   
