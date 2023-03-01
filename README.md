@@ -12,10 +12,10 @@ That’s the setting for our project: Based on the ingredient compositions obtai
 1. df_generation.py - retrieve data from Open Food Facts --> result: food_data.csv  
   
 ### data_preprocessing   
-2. data_cleaning.py - clean food_data.csv --> result: food_data_test.csv (incl. unknown vegan status), food_data_clean_test.csv (excl. unknown vegan status)
-3. tokenization.py -   word tokenization --> binarization --> cleaning steps (with use of txt_to_lst) --> food_matrix.csv (saved to Google Drive; 500 MB)
-4. items.txt, items_copy.txt, items2_copy.txt - files (backup) with column names --> items2_copy.txt was cleaned manually (in the end it consisted only of noise words)
-5. txt_to_lst.py - (the noise words from items2_copy.txt are turned into a list that can be exported to tokenization.py for cleaning step (cleaning of columns) 
+2. data_cleaning.py - clean food_data.csv --> result: food_data_test.csv (incl. unknown vegan status), food_data_clean_test.csv (excl. unknown vegan status)  
+3. tokenization.py -   word tokenization --> binarization --> cleaning steps (with use of txt_to_lst) --> food_matrix.csv (saved to Google Drive; 500 MB)  
+4. items.txt, items_copy.txt, items2_copy.txt - files (backup) with column names --> items2_copy.txt was cleaned manually (in the end it consisted only of noise words) 
+5. txt_to_lst.py - (the noise words from items2_copy.txt are turned into a list that can be exported to tokenization.py for cleaning step (cleaning of columns)  
 
 ### iris_examples  
 6. model.py - pytorch tabular example with iris data (iris.csv) (high-level)  
