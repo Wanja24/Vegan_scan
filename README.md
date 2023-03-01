@@ -1,10 +1,34 @@
 
 # Vegan Scan - vegan shopping made simple  
 
-## Description  
-What, why, challenges, features to implement in future  
-    
-## Installation  
+## Project Summary  
+Over the last years there has been a pronounced increase in the number of vegans in Germany. Especially in the early stages of becoming vegan, it is necessary to learn to discriminate between vegan and non-vegan products. Labels, seemingly endless lists of ingredients or barcode scanners, that’s how it shall work—but, then again, some ingredients are not listed or the databases lack information. 
+That’s the setting for our project: Based on the ingredient compositions obtained from Open Food Facts, a binary classification of the vegan statuses of products is carried out. To do so, we compare the effectiveness of a PyTorch deep learning approach with a simple random forest. Eventually, both reach an accuracy of circa 97%.
+
+## Files / Process  
+  
+### data_preprocessing   
+1. df_generation.py - retrieve data from Open Food Facts --> result: food_data.csv  
+2. data_cleaning.py - clean food_data.csv --> result: food_data_test.csv (incl. unknown vegan status), food_data_clean_test.csv (excl. unknown vegan status)
+3. tokenization.py -   
+4. items.txt, items_copy.txt, items2_copy.txt -   
+5. txt_to_lst.py -  
+
+### iris_examples  
+6. model.py - pytorch tabular example with iris data (iris.csv) (high-level)  
+7. bin_class.py & bin_class_eval.py - another pytorch tabular example with iris data (low-level)  
+8. iris_random_forest.py - random forest example with iris data  
+
+### models  
+9. vegan_bin_class.py - train a pytorch tabular model to classify products as vegan/non-vegan based on the ingredients  
+10. vegan_bin_class_continue_training.py - continue training the model  
+11. vegan_bin_class_eval.py - evaluate the model  
+12. vegan_random_forest.py - train a random forest to classify products as vegan/non-vegan based on the ingredients  
+  
+### Features to implement in the future  
+13. Adapt learning rate to get an even higher accuracy.  
+14. Build an app that can scan barcodes, get the ingredients and deploy the model to classify the product as vegan/non-vegan.  
+15. Implement other languages.  
 
 ## Credits  
 Contributors: Stefan Smid (@StefanFSmid), Wanja Tolksdorf (@Wanja24)  
