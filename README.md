@@ -23,10 +23,10 @@ That’s the setting for our project: Based on the ingredient compositions obtai
 8. iris_random_forest.py - random forest example with iris data  
 
 ### models  
-9. vegan_bin_class.py - train a pytorch tabular model to classify products as vegan/non-vegan based on the ingredients  
+9. vegan_bin_class.py - train a pytorch tabular model 80% of food_matrix.csv to classify products as vegan/non-vegan based on the ingredients 
 10. vegan_bin_class_continue_training.py - continue training the model  
 11. vegan_bin_class_eval.py - evaluate the model  
-12. vegan_random_forest.py - train a random forest to classify products as vegan/non-vegan based on the ingredients  
+12. vegan_random_forest.py - train a random forest on 80% of food_matrix.csv to classify products as vegan/non-vegan based on the ingredients  
   
 ### Features to implement in the future  
 13. Adapt learning rate to get an even higher accuracy.  
